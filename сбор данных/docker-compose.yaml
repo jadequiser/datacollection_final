@@ -109,6 +109,7 @@ services:
           --role Admin \
           --email $${_AIRFLOW_WWW_USER_EMAIL:-airflow@example.com} \
           --password $${_AIRFLOW_WWW_USER_PASSWORD:-airflow} || true
+        python /opt/airflow/src/db_utils.py
     environment:
       <<: *airflow-common-env
       _AIRFLOW_DB_UPGRADE: 'true'
